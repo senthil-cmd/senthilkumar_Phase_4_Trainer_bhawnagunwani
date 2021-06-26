@@ -17,7 +17,8 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
-
+import { CartserviceService } from './service/cartservice.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,16 +34,16 @@ import { UpdateproductComponent } from './updateproduct/updateproduct.component'
     FooterComponent,
     PageNotFoundComponent,
     HeaderComponent,
-    UpdateproductComponent
+    UpdateproductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-    
+    FormsModule,
+    Ng2SearchPipeModule
   ],
-  providers: [],
+  providers: [CartserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

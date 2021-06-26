@@ -13,18 +13,22 @@ import { ProductRestServiceService } from '../service/product-rest-service.servi
 export class ProductviewComponent implements OnInit {
   Productlist:Array<Product>=[];
   cart:Array<Product>=[];
+  //@Input()cartdata:any;
+  cartdata:Product=new Product();
+  @Output()changecart:EventEmitter<any> = new EventEmitter();
+  constructor(private service:ProductRestServiceService) { 
+  }
 
-  constructor(private service:ProductRestServiceService) { }
-
+  search:string='';
   ngOnInit(): void {this.service.getProduct().subscribe(result=>{this.Productlist=result})
 }
 addtocart(pdt:Product,i:any){
   this.cart.push(pdt)
-  console.log(this.cart)
-  console.log(i)
- this.cartdata=this.Productlist
-  this.changecart.emit()
+ this.cartdata=pdt
+  this.changecart.emit(this.cartdata)
+  
 }
-@Input()cartdata:any
-@Output()changecart = new EventEmitter(); 
+ searchitem(){
+   this.Productlist.filter
+ }
 }

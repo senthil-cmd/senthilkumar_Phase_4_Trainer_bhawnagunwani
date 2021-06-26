@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from './model/Product';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +10,9 @@ export class AppComponent implements OnInit {
 
 ngOnInit(){
 }
+cart:Array<String>=[];
 
-
-
+addedcartapp(prd:any){
+console.log(prd)
+}
 }

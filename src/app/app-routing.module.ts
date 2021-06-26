@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddproductComponent } from './admin/addproduct/addproduct.component';
 import { LoginComponent } from './admin/login/login.component';
 import { ManageproductComponent } from './admin/manageproduct/manageproduct.component';
+import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'checkout',component:CheckoutComponent},
   {path:'cart',component:CartComponent},
   {path:'updateproduct/:id',component:UpdateproductComponent},
-  {path:'**',component:PageNotFoundComponent}];
+  {path:'**',component:PageNotFoundComponent}
+];
   
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
