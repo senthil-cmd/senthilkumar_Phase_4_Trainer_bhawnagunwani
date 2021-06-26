@@ -20,8 +20,11 @@
             <td>{{p.price}}</td>
             <td>{{p.desc}}</td>
             <td>{{p.productimage}}</td>
-            <td><a [routerLink]="['/updateproduct',p.id]"class = "btn btn-secoundary" >Update Product</a></td>
-            <td><button class = "btn btn-secoundary" (click)=delete(p,i) >Delete Product</button></td>
+            <td><a [routerLink]="['/updateproduct',p.id]"class = "btn btn-warning" >Update Product</a></td>
+            <td><button class = "btn btn-danger" (click)=delete(p,i) >Delete Product</button></td>
         </tr>
     </tbody>
 </table>
+<hr>
+<hr>
+<a [routerLink]="['/addItem']"class = "btn btn-success" >Add Product</a>
