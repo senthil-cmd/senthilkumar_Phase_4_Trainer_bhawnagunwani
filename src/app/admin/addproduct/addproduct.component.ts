@@ -1,34 +1,30 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Product } from '../../model/Product';
+import { Component, OnInit} from '@angular/core';
 import { ProductRestServiceService } from '../../service/product-rest-service.service';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/model/Product';
+import { NgForm } from '@angular/forms';
+
+
 @Component({
   selector: 'app-addproduct',
   templateUrl: './addproduct.component.html',
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit {
-  @Input() product = {
-    productid: 0,
-    productName: '',
-    brandName: '',
-    category: '',
-    desc: '',
-    qty: 0,
-    price: 0,
-    productimage: ''
-
-  }
+  product:Product = new Product();
   constructor(
     public service: ProductRestServiceService,
     public router: Router
   ) { }
 
   ngOnInit(): void {
+    
   }
-  additem() {
-    this.service.createProduct(this.product).subscribe((data: {}) => {
+  additem(){
+    console.log(this.product)
+    this.service.createProduct(this.product).subscribe(result => {
       this.router.navigate(['/manageItem'])
+      console.log(result)
     })
   }
 }

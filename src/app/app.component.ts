@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import{HttpClient} from "@angular/common/http"
-import { Product } from './model/Product';
-import { Observable, ObservableInput } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

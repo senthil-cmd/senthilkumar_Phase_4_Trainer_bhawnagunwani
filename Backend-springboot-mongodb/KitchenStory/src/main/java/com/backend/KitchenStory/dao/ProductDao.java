@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.backend.KitchenStory.model.Product;
-//@CrossOrigin(origins = "http://localhost:8080/")
+@CrossOrigin(origins = "http://localhost:4200/")
 @Repository
 @RepositoryRestResource(collectionResourceRel = "item", path = "item")
 public interface ProductDao extends MongoRepository<Product, String> {

@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,12 +23,12 @@ public class ProductRest {
 	  
 	  @Autowired MongoTemplate mongoTemplate;
 	  
-	  
+	//@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public List<Product> getallproduct() {
 		return productdao.findAll();
 	}
-
+	//@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/createProduct", method = RequestMethod.POST)
 	public Product addproduct(@RequestBody Product Products) {
 		return productdao.save(Products);

@@ -1,4 +1,4 @@
-<h3 class="mb-3 text-center">Add Item</h3>
+<h3 class="mb-3 text-center">Update Item</h3>
 <div class="container">
     <form #productfromn ngFrom >
         <div class="form-group">
@@ -30,7 +30,7 @@
             <input required minlength="3" type="text" class="form-control" name="productimage"[(ngModel)]="product.productimage" ngModel #image="ngModel">        
         </div>
         <br>
-        <input type="submit" class="btn btn-success btn-lg btn-block"(click)="additem()" value="Add Item"/>|  
+        <input type="submit" class="btn btn-success btn-lg btn-block"(click)="updateproduct()" value="Update Item"/>|  
         <input type="reset" class="btn btn-secondary btn-lg btn-block" value="clear"/>
     </form>
 </div>
