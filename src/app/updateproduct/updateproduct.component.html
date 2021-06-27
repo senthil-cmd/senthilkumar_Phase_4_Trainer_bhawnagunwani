@@ -6,20 +6,20 @@
             <input required minlength="3" type="text" class="form-control" name="productName" [(ngModel)]="product.productName" ngModel #productName ="ngModel">
         </div>
         <div class="form-group">
-            <label for="productid">Item Number:</label>
-            <input required  type="text" class="form-control" name="productId" [(ngModel)]="product.productId"ngModel #Productid ="ngModel"placeholder="Product ID Number">
+            <label for="type">Item Type:</label>
+            <input required  type="text" class="form-control" name="type" [(ngModel)]="product.type"ngModel #type ="ngModel">
         </div>
         <div class="form-group">
-            <label for="brandName">Brand:</label>
-            <input required minlength="3" type="text" class="form-control" name="brandName" [(ngModel)]="product.brandName"ngModel #brandName ="ngModel" >
+            <label for="width">width:</label>
+            <input required minlength="3" type="text" class="form-control" name="width" [(ngModel)]="product.width"ngModel #width ="ngModel" >
+        </div>
+        <div class="form-group">
+            <label for="height">Height:</label>
+            <input required type="text" class="form-control" name="height" [(ngModel)]="product.height"ngModel #height ="ngModel"  >
         </div>
         <div class="form-group">
             <label for="desc">Descrption:</label>
             <input required minlength="3" type="text" class="form-control" name="desc" [(ngModel)]="product.desc"  ngModel #desc ="ngModel" >
-        </div>
-        <div class="form-group">
-            <label for="qty">Quantity:</label>
-            <input required type="text" class="form-control" name="qty" [(ngModel)]="product.qty"ngModel #qty ="ngModel"  >
         </div>
         <div class="form-group">
             <label for="price">Price:</label> 
@@ -29,8 +29,12 @@
             <label for="productimage">Image Name:</label>
             <input required minlength="3" type="text" class="form-control" name="productimage"[(ngModel)]="product.productimage" ngModel #image="ngModel">        
         </div>
+        <div class="form-group">
+            <label for="rating">Rating:</label>
+            <input required minlength="3" type="text" class="form-control" name="rating"[(ngModel)]="product.rating" ngModel #image="ngModel">        
+        </div>
         <br>
-        <input type="submit" class="btn btn-success btn-lg btn-block"(click)="updateproduct()" value="Update Item"/>|  
+        <input type="submit" class="btn btn-success btn-lg btn-block"(click)="updateproduct()" value="Add Item"/>|  
         <input type="reset" class="btn btn-secondary btn-lg btn-block" value="clear"/>
     </form>
 </div>

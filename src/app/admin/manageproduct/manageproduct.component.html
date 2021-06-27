@@ -1,24 +1,32 @@
+<a [routerLink]="['/updatepassword']"class = "btn btn-success" >Change password </a>
+
+<br>
+<br>
+
+<input type="search" [(ngModel)] = "search" class="form-control" placeholder="Search..."
+                        aria-label="Search">
+
 <table class = "table table-hover"> <thead>
     <tr>
-        <th>Product Id</th>
-        <th>Product Name</th>
-        <th>Brand Name</th>
-        <th>Category</th>
-        <th>Quantity</th>
-        <th>Price</th>
+        <th>No</th>
+        <th>Item Name</th>
+        <th>Type</th>
         <th>Descrption</th>
+        <th>Height</th>
+        <th>width</th>
+        <th>Price</th>
         <th>ImageName</th>
     </tr>
     </thead>
     <tbody>
-        <tr *ngFor ="let p of Productlist;let i = index ">
-            <td>{{p.productId}}</td>
+        <tr *ngFor ="let p of Productlist|filter:search;let i = index ">
+            <td>{{i}}</td>
             <td>{{p.productName}}</td>
-            <td>{{p.brandName}}</td>
-            <td>{{p.category}}</td>
-            <td>{{p.qty}}</td>
-            <td>{{p.price}}</td>
+            <td>{{p.type}}</td>
             <td>{{p.desc}}</td>
+            <td>{{p.height}}</td>
+            <td>{{p.width}}</td>
+            <td>{{p.price}}</td>
             <td>{{p.productimage}}</td>
             <td><a [routerLink]="['/updateproduct',p.id]"class = "btn btn-warning" >Update Product</a></td>
             <td><button class = "btn btn-danger" (click)=delete(p,i) >Delete Product</button></td>

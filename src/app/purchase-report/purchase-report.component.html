@@ -1,1 +1,48 @@
-<p>purchase-report works!</p>
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Checkout form</h2>
+        </div>
+        <div class="col-md-6">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-primary">Your cart</span>
+                <span class="badge bg-primary rounded-pill">{{i}}</span>
+            </h4>
+            <div *ngFor="let p of cartitems">
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                            <h6 class="my-0">{{p.productName}}</h6>
+                            <h6 class="my-0">{{p.type}}</h6>
+                            <small class="text-muted">{{p.desc}}</small>
+                        </div>
+                        <span class="text-muted">{{p.price}}₹</span>
+                    </li>
+                </ul>
+            </div>
+            <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Total (INR)</span>
+                    <strong>{{getTotal()}}</strong>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="col-md-6">
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between">firstname:{{data.firstname}}</li>
+                    <li class="list-group-item d-flex justify-content-between">lastname: {{data.lastname}}</li>
+                    <li class="list-group-item d-flex justify-content-between">username: {{data.username}}</li>
+                    <li class="list-group-item d-flex justify-content-between">email: {{data.email}}</li>
+                    <li class="list-group-item d-flex justify-content-between">adress: {{data.address}}</li>
+                    <li class="list-group-item d-flex justify-content-between">address2: {{data.address2}}</li>
+                    <li class="list-group-item d-flex justify-content-between">country: {{data.country}}</li>
+                    <li class="list-group-item d-flex justify-content-between">state: {{data.state}}</li>
+                    <li class="list-group-item d-flex justify-content-between">zipcode: {{data.zipcode}}</li>
+                    <li class="list-group-item d-flex justify-content-between">payment: Done</li>
+
+                </ul>
+            </div>
+        </div>
+</main>
+</div>

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable,throwError } from 'rxjs';
 
 import{retry,catchError} from 'rxjs/Operators';
+import { admin } from '../model/admin';
 import { Product } from '../model/Product';
 
 @Injectable({
@@ -41,7 +42,10 @@ export class ProductRestServiceService {
     return this.http.delete<Product>(this.apiURL+'/item'+id)
     .pipe(retry(1),catchError(this.handleError))
   }
-
+  updateadmin(id:string,adminupdate:admin):Observable<admin>{
+    return this.http.put<admin>(this.apiURL+'/service/'+id,JSON.stringify(adminupdate),this.httpOptions)
+    .pipe(retry(1),catchError(this.handleError))
+  }
 
   handleError(error:any) {
     let errorMessage = '';

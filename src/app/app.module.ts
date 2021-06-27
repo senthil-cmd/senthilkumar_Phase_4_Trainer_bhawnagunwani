@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {  HttpClientModule } from '@angular/common/http';
-import { FormsModule} from '@angular/forms';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AddproductComponent } from './admin/addproduct/addproduct.component';
 import { ManageproductComponent } from './admin/manageproduct/manageproduct.component';
 import { AdminComponent } from './admin/admin/admin.component';
@@ -19,6 +19,8 @@ import { HeaderComponent } from './header/header.component';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
 import { CartserviceService } from './service/cartservice.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { UpdatePasswordComponent } from './admin/update-password/update-password.component';
+import { ReportService } from './service/report.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,15 +37,17 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     PageNotFoundComponent,
     HeaderComponent,
     UpdateproductComponent,
+    UpdatePasswordComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    ReactiveFormsModule
   ],
-  providers: [CartserviceService],
+  providers: [CartserviceService,ReportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

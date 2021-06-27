@@ -15,7 +15,7 @@ import com.backend.KitchenStory.model.Product;
 @RepositoryRestResource(collectionResourceRel = "item", path = "item")
 public interface ProductDao extends MongoRepository<Product, String> {
 	
-	Product findByProductId(@Param("pid") int pid);
+	
 	    
 	}
 

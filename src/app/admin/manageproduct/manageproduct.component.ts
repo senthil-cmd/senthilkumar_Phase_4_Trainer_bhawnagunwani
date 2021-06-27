@@ -7,6 +7,8 @@ import { ProductRestServiceService } from 'src/app/service/product-rest-service.
   styleUrls: ['./manageproduct.component.css']
 })
 export class ManageproductComponent implements OnInit {
+
+search:string='';
   Productlist:Array<any>=[];
   constructor(private service:ProductRestServiceService
     ) { }

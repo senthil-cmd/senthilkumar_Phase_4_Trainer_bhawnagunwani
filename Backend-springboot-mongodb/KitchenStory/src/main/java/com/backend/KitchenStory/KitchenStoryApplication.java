@@ -18,4 +18,6 @@ public class KitchenStoryApplication {
 		SpringApplication.run(KitchenStoryApplication.class, args);
 	}
 
+	
+
 }

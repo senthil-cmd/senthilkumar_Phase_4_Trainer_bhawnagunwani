@@ -7,68 +7,67 @@ import org.springframework.data.annotation.Id;
 public class Product {
 	
 	
+	
 	@Id
 	private String id;
-	private int productId;
 	private String productName;
-	private String brandName;
-	private String category;
+	private String type;
 	private String desc;
-	private int qty;
-	private double price;
 	private String productimage;
-	
+	private int height;
+	private int width;
+	private double price;
+	private int rating;
 	public String getId() {
 		return id;
-	}
-	
-	public int getProductId() {
-		return productId;
 	}
 	public String getProductName() {
 		return productName;
 	}
-	public String getBrandName() {
-		return brandName;
-	}
-	public String getCategory() {
-		return category;
+	public String getType() {
+		return type;
 	}
 	public String getDesc() {
 		return desc;
 	}
-	public int getQty() {
-		return qty;
+	public String getProductimage() {
+		return productimage;
+	}
+	public int getHeight() {
+		return height;
+	}
+	public int getWidth() {
+		return width;
 	}
 	public double getPrice() {
 		return price;
 	}
-	public String getProductimage() {
-		return productimage;
-	}
-	public void setProductId(int productId) {
-		this.productId = productId;
+	public int getRating() {
+		return rating;
 	}
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public void setBrandName(String brandName) {
-		this.brandName = brandName;
-	}
-	public void setCategory(String category) {
-		this.category = category;
+	public void setType(String type) {
+		this.type = type;
 	}
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	public void setQty(int qty) {
-		this.qty = qty;
+	public void setProductimage(String productimage) {
+		this.productimage = productimage;
+	}
+	public void setHeight(int height) {
+		this.height = height;
+	}
+	public void setWidth(int width) {
+		this.width = width;
 	}
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public void setProductimage(String productimage) {
-		this.productimage = productimage;
+	public void setRating(int rating) {
+		this.rating = rating;
 	}
 	
 }

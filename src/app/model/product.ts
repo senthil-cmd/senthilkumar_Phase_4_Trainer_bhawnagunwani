@@ -2,12 +2,12 @@
 
 export class Product {
 id?: string;
-productId: number=0;
 productName:String='';
-brandName:String='';
-category?:String='';
+type:String='';
 desc:String='';
-qty:number=0;
-price:number=0;
 productimage:String='';
+height:number=0;
+width:number=0;
+price:number=0;
+rating:number=4;
 }

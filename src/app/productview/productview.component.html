@@ -41,64 +41,33 @@
     <br>
 </div>
 <br>
-<div class="container">
-    <div class="container d-flex flex-wrap justify-content-center">
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0">
-            <ul class="nav nav-pills"><li class="nav-item">Search food item of your choice</li>
-                <li class="nav-item"><input type="search" [(ngModel)] = "search" class="form-control" placeholder="Search..."
-                        aria-label="Search"></li>
+<br>
+<div class=container>
+    <input type="search" [(ngModel)]="search" class="form-control" placeholder="Search..." aria-label="Search">
+    <br>
+    <br>
+
+    <div class="row row-cols-md-3">
+        <div class="col" *ngFor="let pdt of Productlist|filter:search ; let i = index">
+            <div class="card" style="width: 18rem;">
+                <img src="assets/product-images/{{pdt.productimage}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{pdt.productName}}</h5>
+                    <p class="card-text">{{pdt.desc}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Type :{{pdt.type}}</li>
+                    <li class="list-group-item">Size :{{pdt.height}}X{{pdt.width}}</li>
+                    <li class="list-group-item">Rating :{{pdt.rating}}</li>
+                    <li class="list-group-item">Price :{{pdt.price}}₹</li>
                 </ul>
-        </form>
+                <div class="card-body">
+                    <button class="btn btn-success" (click)=addtocart(pdt,i)>Add To Cart</button>
+                </div>
+            </div>
+            <br>
+        </div>
+        
     </div>
+
 </div>
-<br>
-<br>
-<div class=container>
-    <div class="row row-cols-2">
-        <div *ngFor ="let pdt of Productlist|filter:search; let i = index" class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="assets/product-images/briyani.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{pdt.productName}}</h5>
-                    <p class="card-text">{{pdt.desc}}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{pdt.brandName}}</li>
-                    <li class="list-group-item">{{pdt.category}}</li>
-                    <li class="list-group-item">{{pdt.qty}}</li>
-                    <li class="list-group-item">{{pdt.price}}</li>
-                </ul>
-                <div class="card-body">
-                    <button class = "btn btn-secoundary" (click)=addtocart(pdt,i) >Add To Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-</div> 
-<br>
-<br>
-<!--
-<div class=container>
-    <div class="row row-cols-2">
-        <div *ngFor ="let pdt of Productlist; let i = index" class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="assets/product-images/briyani.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{pdt.productName}}</h5>
-                    <p class="card-text">{{pdt.desc}}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{pdt.brandName}}</li>
-                    <li class="list-group-item">{{pdt.category}}</li>
-                    <li class="list-group-item">{{pdt.qty}}</li>
-                    <li class="list-group-item">{{pdt.price}}</li>
-                </ul>
-                <div class="card-body">
-                    <button class = "btn btn-secoundary" (click)=addtocart(pdt,i) >Add To Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-</div> -->

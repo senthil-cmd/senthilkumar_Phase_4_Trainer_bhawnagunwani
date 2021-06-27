@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.backend.KitchenStory.dao.AdminDao;
 import com.backend.KitchenStory.dao.ProductDao;
+import com.backend.KitchenStory.model.Admin;
 import com.backend.KitchenStory.model.Product;
 
 @RestController
@@ -20,6 +22,7 @@ import com.backend.KitchenStory.model.Product;
 public class ProductRest {
 	
 	  @Autowired ProductDao productdao;
+	  
 	  
 	  @Autowired MongoTemplate mongoTemplate;
 	  
@@ -34,22 +37,6 @@ public class ProductRest {
 		return productdao.save(Products);
 	}
 
-//	@RequestMapping(value = "/product/{id}", method = RequestMethod.GET) 
-//	public Product getproduct(@PathVariable("id") String id) { 
-//	  Optional<Product> prd = productdao.findById(id);
-//	  if(prd.isPresent()) {
-//	  Product p = prd.get();
-//	  return p;
-//	  }
-//	  return null;
-
-}
 	  
+}
 
-//	@RequestMapping(value="{id}",method=RequestMethod.DELETE)public void
-//
-//	deleteproduct(@PathVariable String id) { // = productdao.findById(id).get();
-//	  //productdao.delete(prd); System.out.println(id); String _id =id; product prd
-//	  = mongoTemplate.findById(id,product.class); }
-//	 
-//}
